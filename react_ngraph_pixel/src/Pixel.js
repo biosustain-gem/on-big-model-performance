@@ -12,50 +12,48 @@ class Pixel extends Component {
 	componentDidMount() {
 		console.dir(init_Data);
 		let {nodes,reactions} = init_Data[1];
-		function ladder(n) {
-			/**
-			 * Ladder graph is a graph in form of ladder
-			 * @param {Number} n Represents number of steps in the ladder
-			 */
-			if (!n || n < 0) {
-				throw new Error("Invalid number of nodes");
-			}
-			
-			
-			var g = createGraph({
+		function buildGraph() {
+			let g = createGraph({
 					uniqueLinkId:false
-				}),
-				i;
-			
-			console.dir(g);
+				});
 			
 			Object.entries(nodes).forEach(function ([key, node]) {
 				g.addNode(+key,node);
 			});
-			
 			Object.values(reactions).forEach(reaction => {
 				Object.values(reaction.segments).forEach((segment) => {
 					g.addLink(+segment.from_node_id,+segment.to_node_id);
 				});
 			});
 			
-			console.log(g.getNode(1300212));
-			
 			return g;
-		};
-		var graph = ladder(10);
+		}
+		let graph = buildGraph();
 		let renderer = renderGraph(graph,{
 			container: this.refs.container,
-			is3d: false
+			// is3d: false,
+			node: {
+				size:30,
+				color: "#FFFFFF",
+				// isPinned: true,
+			}
 		});
-		console.log(renderer);
+		
 		renderer.forEachNode(function (node) {
 			let node_d = nodes[node.id+""];
-			node.position = {x:node_d.y,y:node_d.x,z:0};
+			Object.assign(node.position, {
+				x:  node_d.x,
+				y:  node_d.y,
+				z:  Math.random()*200-100
+			});
 		});
-		var ui = renderer.getNode(1300212);
-		console.log(ui);
-		console.log(ui.position);
+		
+		let camera = renderer.camera();
+		Object.assign(camera.position, {x:18000,y:11000,z:-18000});
+		camera.far = 5000;
+		camera.aspect = 0.9;
+		Object.assign(camera.rotation, {x:3.14,y:0,z:0});
+		console.log(renderer);
 	};
 	
   render() {

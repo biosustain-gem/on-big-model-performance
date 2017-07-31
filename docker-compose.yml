@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  escherserver_cmp:
+    container_name: on-big-model-peformance
+    build: ./
+    image: on-big-model-peformance
+    ports:
+      - "4000:80"
+    volumes:
+      - ./:/var/www/html
