@@ -1,0 +1,3 @@
+[submodule "escher-visualization"]
+	path = escher-visualization
+	url = git@github.com:biosustain-gem/escher-visualization.git
