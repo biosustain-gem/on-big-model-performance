@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e764c446-5023-484e-87a3-a927afe9a03d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cytoscape-react/build/favicon.ico" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cytoscape-react/build/asset-manifest.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cytoscape-react/build/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cytoscape-react/build/manifest.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cytoscape-react/build/service-worker.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cytoscape-react/build/static/css/main.2fa70d2e.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cytoscape-react/build/static/css/main.2fa70d2e.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cytoscape-react/build/static/js/main.b162567c.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cytoscape-react/build/static/js/main.b162567c.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cytoscape-react/.gitignore" afterPath="$PROJECT_DIR$/cytoscape-react/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cytoscape-react/.idea/workspace.xml" afterPath="$PROJECT_DIR$/cytoscape-react/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="e764c446-5023-484e-87a3-a927afe9a03d" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -296,12 +283,12 @@
       <workItem from="1501543302329" duration="7447000" />
       <workItem from="1502100341906" duration="232000" />
       <workItem from="1502267378715" duration="1220000" />
-      <workItem from="1502270944835" duration="2001000" />
+      <workItem from="1502270944835" duration="2065000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11480000" />
+    <option name="totallyTimeSpent" value="11544000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
