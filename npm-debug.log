@@ -1,12 +1,12 @@
 0 info it worked if it ends with ok
-1 verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'run', 'build' ]
+1 verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'start' ]
 2 info using npm@3.10.10
 3 info using node@v6.11.0
 4 verbose stack Error: ENOENT: no such file or directory, open '/home/s163601/WebstormProjects/on-big-model-performance/package.json'
 4 verbose stack     at Error (native)
 5 verbose cwd /home/s163601/WebstormProjects/on-big-model-performance
-6 error Linux 4.10.0-28-generic
-7 error argv "/usr/bin/nodejs" "/usr/bin/npm" "run" "build"
+6 error Linux 4.10.0-30-generic
+7 error argv "/usr/bin/nodejs" "/usr/bin/npm" "start"
 8 error node v6.11.0
 9 error npm  v3.10.10
 10 error path /home/s163601/WebstormProjects/on-big-model-performance/package.json

@@ -30,6 +30,7 @@
     <thead>
         <tr>
             <td></td>
+            <th><a href="escher-react/build/">Escher.js</a></th>
             <th><a href="escher-visualization/build/">React on SVG</a></th>
             <th><a href="react_ngraph_pixel/build/">Ngraph (webgl)</a></th>
             <th><a href="cytoscape-react/build/">Cytoscape</a></th>
@@ -39,13 +40,15 @@
     <tbody>
         <tr>
             <th>Description</th>
+            <td>Current solution - baseline for improvements.</td>
             <td>The most simple approach data is parsed and added to DOM by react.</td>
             <td>High performance 3d graph library.</td>
             <td>Comprehensive library based on Canvas.</td>
         </tr>
         <tr>
             <th>Advantages</th>
-            <td>Does not crash for big models.</td>
+            <td>Comprehensive, working solution.</td>
+            <td>Does not crash for <s>big models</s> models with faulty values.</td>
             <td><ul>
                 <li>The performance is good even for really big models.</li>
                 <li>No longer maintained.</li>
@@ -57,6 +60,10 @@
         </tr>
         <tr>
             <th>Disadvantages</th>
+            <td><ul>
+                <li>Does crash for <s>big models</s> models with even small flaws (ex. wrong defined curve shape).</li>
+                <li>Worst performance - not usable on testing model.</li>
+            </ul>
             <td>DOM structure is slow and there is noticeable drop in performance with increasing numbers of elements.</td>
             <td><ul>
                 <li>Questionable usability of 3d graphs.</li>
