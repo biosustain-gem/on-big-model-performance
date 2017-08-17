@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
 <!--<dl>-->
@@ -26,7 +27,7 @@
     <!--</dd>-->
     <!--<dt><a href="cytoscape-react/build/">Cytoscape</a></dt>-->
 <!--</dl>-->
-<table style="width: 100vw">
+<table style="width: 100vw" class="table">
     <thead>
         <tr>
             <td></td>
@@ -34,7 +35,7 @@
             <th><a href="escher-visualization/build/">React on SVG</a></th>
             <th><a href="react_ngraph_pixel/build/">Ngraph (webgl)</a></th>
             <th><a href="cytoscape-react/build/">Cytoscape</a></th>
-            <th></th>
+            <th><a href="sigmajs-react/build/">Sigmajs</a></th>
         </tr>
     </thead>
     <tbody>
@@ -44,6 +45,7 @@
             <td>The most simple approach data is parsed and added to DOM by react.</td>
             <td>High performance 3d graph library.</td>
             <td>Comprehensive library based on Canvas.</td>
+            <td>Failed approach of using webgl as charting library.</td>
         </tr>
         <tr>
             <th>Advantages</th>
@@ -57,6 +59,7 @@
                 <li>Implements folding algorithm (for predefined groups).</li>
                 <li>Well maintained, in active development.</li>
             </ul></td>
+            <td>-</td>
         </tr>
         <tr>
             <th>Disadvantages</th>
@@ -71,6 +74,10 @@
             </ul></td>
             <td><ul>
                 <li>Performance problems - tends to lag on test model.</li>
+            </ul></td>
+            <td><ul>
+                <li>Performance even worse than in baseline.</li>
+                <li>No longer maintained.</li>
             </ul></td>
         </tr>
     </tbody>
