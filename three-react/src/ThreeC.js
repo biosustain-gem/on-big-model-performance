@@ -106,16 +106,15 @@ class ThreeC extends Component {
 //
 // // add to the scene
 // 		this.scene.add(pointLight);
-		function onDocumentMouseMove( event ) {
-			this.mouseX = event.clientX - window.innerWidth / 2;
-			this.mouseY = event.clientY - window.innerHeight / 2;
-			console.log("buu",this.mouseX,this.mouseY);
-		}
+		let onDocumentMouseMove = ( event ) => {
+			this.mouseX = (event.clientX - window.innerWidth / 2)*0.01;
+			this.mouseY = (event.clientY - window.innerHeight / 2)*0.01;
+		};
 		document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 		
 				let geometry = new THREE.Geometry();
 				let sprite = new THREE.TextureLoader().load( "sprites/disk50.png" );
-				for (let i = 0; i < 10000; i ++ ) {
+				for (let i = 0; i < 12000; i ++ ) {
 					var vertex = new THREE.Vector3();
 					vertex.x = 2000 * Math.random() - 1000;
 					vertex.y = 2000 * Math.random() - 1000;
@@ -123,23 +122,31 @@ class ThreeC extends Component {
 					geometry.vertices.push( vertex );
 				}
 				let material = new THREE.PointsMaterial( { size: 35, sizeAttenuation: false, map: sprite, alphaTest: 0.5, transparent: true } );
+				material.precision = "lowp";
 				material.color.setHSL( 1.0, 0.3, 0.7 );
 				let particles = new THREE.Points( geometry, material );
 				this.scene.add( particles );
 		
+		var l_material = new THREE.LineBasicMaterial({
+			color: 0x0000ff,
+			linewidth: 1,
+			linecap: 'round', //ignored by WebGLRenderer
+			linejoin:  'round' //ignored by WebGLRenderer
+		});
+		material.precision = "lowp";
+		
+		var line = new THREE.Line(geometry, l_material);
+		this.scene.add(line);
 		
 		this.scene.add(this.camera);
 		
 		let renderrr = () => {
 			requestAnimationFrame(renderrr);
 			var time = Date.now() * 0.00005;
-			this.camera.position.x = this.mouseX;
-			this.camera.position.y = this.mouseY;
-			this.camera.updateProjectionMatrix();
-			let h = ( 360 * ( 1.0 + time ) % 360 ) / 360;
-			material.color.setHSL( h, 0.5, 0.5 );
+			this.camera.position.set(this.camera.position.x+this.mouseX, this.camera.position.y-this.mouseY, this.camera.position.z);
+			
+			// this.camera.updateProjectionMatrix();
 			this.renderer.render( this.scene, this.camera );
-			console.log(this.camera);
 		};
 		renderrr();
 		

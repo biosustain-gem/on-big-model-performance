@@ -11,7 +11,12 @@ class EscherC extends Component {
   
   componentDidMount() {
     console.log(init_Data);
-    escher.Builder(init_Data,null,null,this.container,{menu:'zoom'});
+    escher.Builder(init_Data,null,null,this.container,{
+      menu:'zoom',
+      scroll_behavior: 'zoom',
+      use_3d_transform: true,
+	    never_ask_before_quit:  true
+    });
   }
   
   render() {

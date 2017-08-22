@@ -23,14 +23,52 @@ class SigmajsC extends Component {
 			  }
 		  ]
 	  });
-	  
+	  s.settings({
+		  // autoRescale: false,
+		  nodesPowRatio: 0.8,
+		  // minNodeSize: 30,
+		  maxNodeSize: 10,
+		  batchEdgesDrawing:  true,
+		  hideEdgesOnMove:  true,
+		  zoomMax: 1,
+		  autoResize: false,
+		  rescaleIgnoreSize: true,
+		  nodesPowRatio: 0.5,
+		  maxNodeSize:  1,
+		  labelThreshold: 4,
+		  defaultEdgeColor: '#334E75',
+		  edgeColor: 'default'
+	  });
 	  
 	  // Then, let's add some data to display:
 	  Object.entries(init_Data[1].nodes).forEach(function ([id,node]) {
-		  node.id = +id;
-		  node.color = '#f00';
-		  node.size = Math.random();
-		  s.graph.addNode(node);
+		  let color;
+		  switch(node.node_type) {
+			  case "midmarker":
+				  color = '#90EE90';
+				  break;
+			  case "multimarker":
+				  color = '#F0F8FF';
+				  break;
+			  case "segment":
+				  color = '#D3D3D3';
+				  break;
+			  case "metabolite":
+				  color = '#FFA500';
+				  break;
+			  default:
+				  console.warn(node);
+				  color = 'black';
+		  }
+		  s.graph.addNode({
+		  	id: +id,
+			  color: color,
+			  label: node.bigg_id,
+			  size: 30+30*(+node.node_is_primary),
+			  data: node,
+			  x: node.x,
+			  y: node.y,
+		  });
 	  });
 	  
 	  Object.values(init_Data[1].reactions).forEach(function(reaction) {

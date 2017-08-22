@@ -5,9 +5,12 @@
   "dependencies": {
     "ngraph.graph": "0.0.13",
     "ngraph.pixel": "^2.4.0",
+    "pixel.static": "^2.1.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-scripts": "1.0.10"
+    "react-router-dom": "^4.1.2",
+    "react-scripts": "1.0.10",
+    "react-stats": "0.0.5"
   },
   "scripts": {
     "start": "react-scripts start",
